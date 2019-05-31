@@ -5,36 +5,48 @@ import { newsApiKey as apiKey } from "../config";
 export default function DisplayTopHeadlines() {
   const [articles, setArticles] = useState([]);
   const [country, setCountry] = useState("us");
-  const url = "https://newsapi.org/v2/top-headlines?";
+  const [url, setUrl] = useState(
+    `https://newsapi.org/v2/top-headlines?country=us${apiKey}`
+  );
 
   useEffect(() => {
-    let ignore = false;
-
     async function fetchData() {
-      const data = await fetch(`${url}country=${country}${apiKey}`);
+      const data = await fetch(url);
       const result = await data.json();
 
-      if (!ignore) setArticles(result.articles);
+      setArticles(result.articles);
     }
 
     fetchData();
-    return () => {
-      ignore = true;
-    };
-  }, [country]);
+  }, [url]);
 
   console.log(articles);
   return (
-    <div>
-      <input value={country} onChange={e => setCountry(e.target.value)} />
+    <>
+      <input
+        type="text"
+        value={country}
+        onChange={e => setCountry(e.target.value)}
+      />
+      <button
+        type="button"
+        onClick={() =>
+          setUrl(
+            `https://newsapi.org/v2/top-headlines?country=${country}${apiKey}`
+          )
+        }
+      >
+        Search
+      </button>
       {articles &&
         articles.map(article => (
           <Card
-            title={article.title.split("-")[0]}
+            key={article.title}
+            title={article.title.split(" - ")[0]}
             image={article.urlToImage}
             description={article.description}
           />
         ))}
-    </div>
+    </>
   );
 }
