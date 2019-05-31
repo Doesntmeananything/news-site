@@ -14,6 +14,7 @@ export default props => {
       headerImage={props.image}
       title={[
         <Tag
+          key={props.tagKey}
           overrides={{
             Root: { style: { marginLeft: "0" } }
           }}
@@ -21,7 +22,7 @@ export default props => {
         >
           {props.source}
         </Tag>,
-        <br />,
+        <br key={props.brKey} />,
         props.title
       ]}
     >
