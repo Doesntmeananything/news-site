@@ -1,5 +1,5 @@
 import React from "react";
-import { StatefulSelect, TYPE } from "baseui/select";
+import { StatefulSelect } from "baseui/select";
 
 const options = {
   options: [
@@ -63,8 +63,12 @@ const options = {
   valueKey: "code",
   placeholder: "Select your country",
   maxDropdownHeight: "300px",
-  type: TYPE.search,
-  onChange: event => console.log(event.option.code)
+  clearable: false,
+  overrides: {
+    Root: { style: { position: "sticky" } }
+  }
 };
 
-export default () => <StatefulSelect {...options} />;
+export default props => (
+  <StatefulSelect {...options} onChange={props.onChangeCountry} />
+);
