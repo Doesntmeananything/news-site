@@ -7,18 +7,21 @@ const options = {
   placeholder: "Search news about..."
 };
 
-export default props => (
-  <Block>
-    <StatefulInput
-      {...options}
-      overrides={{
-        Before: () => (
-          <Block display="flex" alignItems="center" paddingLeft="scale500">
-            <Search size="16px" />
-          </Block>
-        )
-      }}
-      onChange={props.onChangeSearch}
-    />
-  </Block>
-);
+export default props => {
+  return (
+    <Block>
+      <StatefulInput
+        {...options}
+        overrides={{
+          Before: () => (
+            <Block display="flex" alignItems="center" paddingLeft="scale500">
+              <Search size="16px" />
+            </Block>
+          )
+        }}
+        onChange={props.onChangeInput}
+        onKeyDown={props.onKeyDownInput}
+      />
+    </Block>
+  );
+};

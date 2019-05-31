@@ -24,7 +24,10 @@ export default props => (
     <NavigationList align={ALIGN.center} />
     <NavigationList align={ALIGN.center}>
       <NavigationItem style={{ width: "200px" }}>
-        <SearchBox onChangeCategory={props.onChangeSearch} />
+        <SearchBox
+          onChangeInput={props.onChangeInput}
+          onKeyDownInput={props.onKeyDownInput}
+        />
       </NavigationItem>
     </NavigationList>
   </HeaderNavigation>
