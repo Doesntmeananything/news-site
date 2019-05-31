@@ -7,6 +7,7 @@ import {
 } from "baseui/header-navigation";
 import CountryPicker from "./CountryPicker";
 import CategoryPicker from "./CategoryPicker";
+import SearchBox from "./SearchBox";
 
 export default props => (
   <HeaderNavigation>
@@ -18,6 +19,12 @@ export default props => (
     <NavigationList align={ALIGN.left}>
       <NavigationItem style={{ width: "200px" }}>
         <CategoryPicker onChangeCategory={props.onChangeCategory} />
+      </NavigationItem>
+    </NavigationList>
+    <NavigationList align={ALIGN.center} />
+    <NavigationList align={ALIGN.center}>
+      <NavigationItem style={{ width: "200px" }}>
+        <SearchBox onChangeCategory={props.onChangeSearch} />
       </NavigationItem>
     </NavigationList>
   </HeaderNavigation>

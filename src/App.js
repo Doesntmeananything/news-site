@@ -30,7 +30,7 @@ function App() {
             const countryCode = e.option.code;
             setCountry(countryCode);
             setUrl(
-              `https://newsapi.org/v2/top-headlines?country=${countryCode}${category}${apiKey}`
+              `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=${category}${apiKey}`
             );
           }}
           onChangeCategory={e => {
