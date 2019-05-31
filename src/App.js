@@ -5,6 +5,8 @@ import { newsApiKey as apiKey } from "./config";
 
 function App() {
   const [articles, setArticles] = useState([]);
+  const [country, setCountry] = useState("us");
+  const [category, setCategory] = useState("");
   const [url, setUrl] = useState(
     `https://newsapi.org/v2/top-headlines?country=us${apiKey}`
   );
@@ -25,11 +27,17 @@ function App() {
       <header>
         <HeaderNavigation
           onChangeCountry={e => {
-            console.log(e.option.code);
+            const countryCode = e.option.code;
+            setCountry(countryCode);
             setUrl(
-              `https://newsapi.org/v2/top-headlines?country=${
-                e.option.code
-              }${apiKey}`
+              `https://newsapi.org/v2/top-headlines?country=${countryCode}${category}${apiKey}`
+            );
+          }}
+          onChangeCategory={e => {
+            const categoryCode = e.option.code;
+            setCategory(categoryCode);
+            setUrl(
+              `https://newsapi.org/v2/top-headlines?country=${country}&category=${categoryCode}${apiKey}`
             );
           }}
         />

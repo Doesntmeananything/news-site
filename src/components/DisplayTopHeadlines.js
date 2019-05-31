@@ -6,7 +6,7 @@ export default function DisplayTopHeadlines(props) {
   return (
     <>
       <FlexGrid
-        flexGridColumnCount={[1, 2, 3, 4]}
+        flexGridColumnCount={[1]}
         flexGridColumnGap="scale800"
         flexGridRowGap="scale800"
       >
@@ -21,7 +21,7 @@ export default function DisplayTopHeadlines(props) {
               <Card
                 to={article.url}
                 title={article.title.split(" - ")[0]}
-                source={article.title.split(" - ")[1]}
+                source={article.source.name}
                 tagKey={article.title}
                 brKey={index}
                 image={article.urlToImage}

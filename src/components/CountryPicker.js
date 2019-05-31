@@ -63,10 +63,7 @@ const options = {
   valueKey: "code",
   placeholder: "Select your country",
   maxDropdownHeight: "300px",
-  clearable: false,
-  overrides: {
-    Root: { style: { position: "sticky" } }
-  }
+  clearable: false
 };
 
 export default props => (
