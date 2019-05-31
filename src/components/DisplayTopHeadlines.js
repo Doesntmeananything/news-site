@@ -47,7 +47,9 @@ export default function DisplayTopHeadlines() {
           articles.map(article => (
             <FlexGridItem key={article.title}>
               <Card
+                to={article.url}
                 title={article.title.split(" - ")[0]}
+                source={article.title.split(" - ")[1]}
                 image={article.urlToImage}
                 description={article.description}
               />
