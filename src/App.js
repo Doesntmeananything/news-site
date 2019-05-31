@@ -1,11 +1,17 @@
 import React from "react";
+import HeaderNavigation from "./components/HeaderNavigation";
 import DisplayTopHeadlines from "./components/DisplayTopHeadlines";
 
 function App() {
   return (
-    <main>
-      <DisplayTopHeadlines />
-    </main>
+    <>
+      <header>
+        <HeaderNavigation />
+      </header>
+      <main>
+        <DisplayTopHeadlines />
+      </main>
+    </>
   );
 }
 
