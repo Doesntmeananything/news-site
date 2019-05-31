@@ -3,9 +3,9 @@ import DisplayTopHeadlines from "./components/DisplayTopHeadlines";
 
 function App() {
   return (
-    <div>
+    <main>
       <DisplayTopHeadlines />
-    </div>
+    </main>
   );
 }
 
