@@ -46,12 +46,11 @@ function App() {
           onChangeInput={e => {
             setQuery(e.target.value);
           }}
-          onKeyDownInput={e => {
-            if (e.keyCode === 13) {
-              setUrl(
-                `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}${apiKey}`
-              );
-            }
+          onSubmitSearch={e => {
+            setUrl(
+              `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}${apiKey}`
+            );
+            e.preventDefault();
           }}
         />
       </header>

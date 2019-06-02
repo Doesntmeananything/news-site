@@ -26,7 +26,7 @@ export default props => (
       <NavigationItem style={{ width: "200px" }}>
         <SearchBox
           onChangeInput={props.onChangeInput}
-          onKeyDownInput={props.onKeyDownInput}
+          onSubmitSearch={props.onSubmitSearch}
         />
       </NavigationItem>
     </NavigationList>

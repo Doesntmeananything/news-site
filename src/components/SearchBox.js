@@ -4,24 +4,29 @@ import { Search } from "baseui/icon";
 import { StatefulInput } from "baseui/input";
 
 const options = {
-  placeholder: "Search news about..."
+  placeholder: "Search news about...",
+  type: "search"
 };
 
 export default props => {
   return (
     <Block>
-      <StatefulInput
-        {...options}
-        overrides={{
-          Before: () => (
-            <Block display="flex" alignItems="center" paddingLeft="scale500">
-              <Search size="16px" />
-            </Block>
-          )
-        }}
-        onChange={props.onChangeInput}
-        onKeyDown={props.onKeyDownInput}
-      />
+      <form onSubmit={props.onSubmitSearch}>
+        <StatefulInput
+          {...options}
+          overrides={{
+            Before: () => (
+              <Block display="flex" alignItems="center" paddingLeft="scale500">
+                <Search size="16px" />
+              </Block>
+            )
+          }}
+          onChange={props.onChangeInput}
+        />
+        <button type="submit" style={{ display: "none" }}>
+          Search
+        </button>
+      </form>
     </Block>
   );
 };
