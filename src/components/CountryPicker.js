@@ -67,5 +67,15 @@ const options = {
 };
 
 export default props => (
-  <StatefulSelect {...options} onChange={props.onChangeCountry} />
+  <StatefulSelect
+    overrides={{
+      Listbox: {
+        style: {
+          zIndex: 200
+        }
+      }
+    }}
+    {...options}
+    onChange={props.onChangeCountry}
+  />
 );

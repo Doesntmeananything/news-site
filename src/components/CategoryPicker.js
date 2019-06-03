@@ -3,16 +3,15 @@ import { StatefulSelect } from "baseui/select";
 
 const options = {
   options: [
-    { id: "All categories", code: "" },
+    { id: "General", code: "general" },
     { id: "Business", code: "business" },
     { id: "Entertainment", code: "entertainment" },
-    { id: "General", code: "general" },
     { id: "Health", code: "health" },
     { id: "Science", code: "science" },
     { id: "Sports", code: "sports" },
     { id: "Technology", code: "technology" }
   ],
-  initialState: { value: [{ id: "All categories", code: "" }] },
+  initialState: { value: [{ id: "General", code: "general" }] },
   labelKey: "id",
   valueKey: "code",
   placeholder: "Select a category",
@@ -21,5 +20,15 @@ const options = {
 };
 
 export default props => (
-  <StatefulSelect {...options} onChange={props.onChangeCategory} />
+  <StatefulSelect
+    overrides={{
+      Listbox: {
+        style: {
+          zIndex: 200
+        }
+      }
+    }}
+    {...options}
+    onChange={props.onChangeCategory}
+  />
 );
