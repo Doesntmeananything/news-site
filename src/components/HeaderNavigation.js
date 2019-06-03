@@ -10,7 +10,15 @@ import CategoryPicker from "./CategoryPicker";
 import SearchBox from "./SearchBox";
 
 export default props => (
-  <HeaderNavigation>
+  <HeaderNavigation
+    overrides={{
+      Root: {
+        style: ({ $theme }) => ({
+          boxShadow: $theme.lighting.shadow500
+        })
+      }
+    }}
+  >
     <NavigationList align={ALIGN.left}>
       <NavigationItem style={{ width: "200px" }}>
         <CountryPicker onChangeCountry={props.onChangeCountry} />
