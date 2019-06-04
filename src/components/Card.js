@@ -22,6 +22,16 @@ export default props => {
         >
           {props.source}
         </Tag>,
+        <Tag
+          closeable={false}
+          variant="outlined"
+          key={props.timeTagKey}
+          overrides={{
+            Root: { style: { borderStyle: "none" } }
+          }}
+        >
+          {props.publishedTime}
+        </Tag>,
         <br key={props.brKey} />,
         props.title
       ]}

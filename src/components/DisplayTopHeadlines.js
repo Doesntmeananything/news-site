@@ -1,5 +1,6 @@
 import React from "react";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
+import moment from "moment";
 import Card from "./Card";
 
 export default function DisplayTopHeadlines(props) {
@@ -22,7 +23,9 @@ export default function DisplayTopHeadlines(props) {
                 to={article.url}
                 title={article.title.split(" - ")[0]}
                 source={article.source.name}
+                publishedTime={moment(article.publishedAt).fromNow()}
                 tagKey={article.title}
+                timeTagKey={index + 100}
                 brKey={index}
                 image={
                   article.urlToImage ||
