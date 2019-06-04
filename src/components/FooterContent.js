@@ -9,7 +9,7 @@ export default () => (
     display="flex"
     justifyContent="center"
     alignItems="center"
-    style={{ width: "100%", height: "70px", marginTop: "12px" }}
+    style={{ width: "100%", height: "50px", marginTop: "12px" }}
   >
     Powered by&nbsp;
     <StyledLink
