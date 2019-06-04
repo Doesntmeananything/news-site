@@ -7,7 +7,7 @@ export default function DisplayTopHeadlines(props) {
   return (
     <>
       <FlexGrid
-        flexGridColumnCount={[1]}
+        flexGridColumnCount={[1, 1, 1, 2]}
         flexGridColumnGap="scale800"
         flexGridRowGap="scale800"
       >
