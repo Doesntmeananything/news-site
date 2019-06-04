@@ -24,7 +24,10 @@ export default function DisplayTopHeadlines(props) {
                 source={article.source.name}
                 tagKey={article.title}
                 brKey={index}
-                image={article.urlToImage}
+                image={
+                  article.urlToImage ||
+                  "http://redferns.ca/wp-content/uploads/2018/07/news.jpg"
+                }
                 description={article.description}
               />
             </FlexGridItem>

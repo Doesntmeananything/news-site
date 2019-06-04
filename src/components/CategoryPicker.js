@@ -22,7 +22,7 @@ const options = {
 export default props => (
   <StatefulSelect
     overrides={{
-      Listbox: {
+      Popover: {
         style: {
           zIndex: 200
         }
