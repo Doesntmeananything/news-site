@@ -13,8 +13,9 @@ export default props => {
         },
         DropdownMenu: {
           style: {
+            maxHeight: "70px",
             position: "absolute",
-            top: "-100px"
+            top: "-40px"
           }
         }
       }}
