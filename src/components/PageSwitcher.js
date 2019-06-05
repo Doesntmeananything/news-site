@@ -10,6 +10,12 @@ export default props => {
             display: "flex",
             justifyContent: "center"
           }
+        },
+        DropdownMenu: {
+          style: {
+            position: "absolute",
+            top: "-100px"
+          }
         }
       }}
       numPages={props.totalPages}
