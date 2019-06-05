@@ -11,7 +11,6 @@ const options = {
     { id: "Sports", code: "sports" },
     { id: "Technology", code: "technology" }
   ],
-  initialState: { value: [{ id: "General", code: "general" }] },
   labelKey: "id",
   valueKey: "code",
   placeholder: "Select a category",

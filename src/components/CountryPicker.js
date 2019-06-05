@@ -58,7 +58,6 @@ const options = {
     { id: "Venezuela", code: "ve" },
     { id: "South Africa", code: "za" }
   ],
-  initialState: { value: [{ id: "United States", code: "us" }] },
   labelKey: "id",
   valueKey: "code",
   placeholder: "Select your country",
