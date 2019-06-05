@@ -2,6 +2,7 @@ import React from "react";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
 import moment from "moment";
 import Card from "./Card";
+import NoNewsMessage from "./Card";
 
 export default function DisplayTopHeadlines(props) {
   return (
@@ -11,7 +12,7 @@ export default function DisplayTopHeadlines(props) {
         flexGridColumnGap="scale800"
         flexGridRowGap="scale800"
       >
-        {props.articles &&
+        {props.articles ? (
           props.articles.map((article, index) => (
             <FlexGridItem
               display="flex"
@@ -34,7 +35,16 @@ export default function DisplayTopHeadlines(props) {
                 description={article.description}
               />
             </FlexGridItem>
-          ))}
+          ))
+        ) : (
+          <FlexGridItem
+            display="flex"
+            alignItems="flex-end"
+            justifyContent="center"
+          >
+            <NoNewsMessage />
+          </FlexGridItem>
+        )}
       </FlexGrid>
     </>
   );
