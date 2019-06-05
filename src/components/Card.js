@@ -10,7 +10,6 @@ export default props => {
     <Block width={["320px", "320px", "500px"]}>
       <Card
         overrides={{
-          // Root: { style: { width: "320px" } },
           Contents: { style: { marginTop: "6px" } }
         }}
         headerImage={props.image}
