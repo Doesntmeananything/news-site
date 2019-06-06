@@ -2,7 +2,7 @@ import React from "react";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
 import moment from "moment";
 import Card from "./Card";
-import NoNewsMessage from "./Card";
+import NoNewsMessage from "./NoNewsMessage";
 
 export default function DisplayTopHeadlines(props) {
   return (

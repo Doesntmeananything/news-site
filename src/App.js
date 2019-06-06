@@ -13,7 +13,7 @@ function scrollToTop() {
 function App() {
   // Api data
   const [response, setResponse] = useState({});
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState(null);
   // Pagination data
   const [currentPage, setCurrentPage] = useState(1);
   // Api request data
@@ -30,13 +30,14 @@ function App() {
       const result = await data.json();
 
       setResponse(result);
-      setArticles(result.articles);
+      if (result.articles) {
+        setArticles(result.articles);
+      }
     }
 
     fetchData();
     scrollToTop();
   }, [url]);
-
   return (
     <>
       <header
