@@ -21,7 +21,7 @@ function App() {
   const [category, setCategory] = useState("");
   const [query, setQuery] = useState("");
   const [url, setUrl] = useState(
-    `https://newsapi.org/v2/top-headlines?country=us${apiKey}`
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
   );
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function App() {
             setCountry(countryCode);
             setCurrentPage(1);
             setUrl(
-              `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=${category}&q=${query}${apiKey}`
+              `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=${category}&q=${query}&apiKey=${apiKey}`
             );
           }}
           onChangeCategory={e => {
@@ -61,7 +61,7 @@ function App() {
             setCategory(categoryCode);
             setCurrentPage(1);
             setUrl(
-              `https://newsapi.org/v2/top-headlines?country=${country}&category=${categoryCode}&q=${query}${apiKey}`
+              `https://newsapi.org/v2/top-headlines?country=${country}&category=${categoryCode}&q=${query}&apiKey=${apiKey}`
             );
           }}
           onChangeInput={e => {
@@ -70,7 +70,7 @@ function App() {
           onSubmitSearch={e => {
             setCurrentPage(1);
             setUrl(
-              `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}${apiKey}`
+              `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}&apiKey=${apiKey}`
             );
             e.preventDefault();
           }}
@@ -90,7 +90,7 @@ function App() {
           onPageChange={({ nextPage }) => {
             setCurrentPage(nextPage);
             setUrl(
-              `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}&page=${nextPage}${apiKey}`
+              `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}&page=${nextPage}&apiKey=${apiKey}`
             );
           }}
         />
