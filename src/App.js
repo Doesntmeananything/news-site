@@ -3,7 +3,8 @@ import HeaderNavigation from "./components/HeaderNavigation";
 import DisplayTopHeadlines from "./components/DisplayTopHeadlines";
 import PageSwitcher from "./components/PageSwitcher";
 import FooterContent from "./components/FooterContent";
-import { newsApiKey as apiKey } from "./config";
+
+const apiKey = process.env.API_KEY;
 
 function scrollToTop() {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
