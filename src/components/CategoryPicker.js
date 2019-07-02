@@ -14,8 +14,9 @@ const options = {
   labelKey: "id",
   valueKey: "code",
   placeholder: "Select a category",
-  maxDropdownHeight: "300px",
-  clearable: false
+  maxDropdownHeight: "200px",
+  clearable: false,
+  searchable: false
 };
 
 export default props => (

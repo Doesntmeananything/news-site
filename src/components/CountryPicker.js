@@ -61,7 +61,7 @@ const options = {
   labelKey: "id",
   valueKey: "code",
   placeholder: "Select your country",
-  maxDropdownHeight: "300px",
+  maxDropdownHeight: "200px",
   clearable: false
 };
 
